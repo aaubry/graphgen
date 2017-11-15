@@ -1,0 +1,17 @@
+version: 1.0.{build}
+
+image: Visual Studio 2015
+
+build:
+  publish_nuget: true
+
+install:
+  - install.bat
+
+build_script:
+  - pp -o graphgen.exe graphgen.pl
+
+artifacts:
+  - path: graphgen.exe
+
+test: off
