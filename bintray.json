@@ -1,0 +1,27 @@
+{
+    "package": {
+        "name": "graphgen",
+        "repo": "graphgen",
+        "subject": "aaubry",
+        "desc": "I was pushed completely automatically",
+        "website_url": "https://github.com/aaubry/graphgen",
+        "issue_tracker_url": "https://github.com/aaubry/graphgen/issues",
+        "vcs_url": "https://github.com/aaubry/graphgen.git",
+        "public_download_numbers": false,
+        "public_stats": false
+    },
+    "version": {
+        "name": "1.0",
+        "desc": "This is a version",
+        "released": "2017-11-16",
+        "vcs_tag": "0.5",
+        "gpgSign": false
+    },
+    "files": [
+        {
+            "includePattern": "graphgen",
+            "uploadPattern": "graphgen"
+        }
+    ],
+    "publish": true
+}

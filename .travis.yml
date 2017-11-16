@@ -1,0 +1,13 @@
+sudo: required
+services:
+  - docker
+language: generic
+script:
+  - docker build -t graphgen .
+  - docker run -u root -v `pwd`:/out -w /out -it graphgen cp /build/graphgen /out/graphgen
+deploy:
+  provider: bintray
+  file: bintray.json
+  user: aaubry
+  key:
+    secure: p+7rJJO0vf0QBOqZhI9vMz8mJaeMJ/6h0Q9YU7t3OHPr3FyILrkgZwFWfhoAoSIUn5ABKoKtiAK17IxqXDVz2DMdU55X6div/tcLw6RPuB4irnunxYHLM9bLGZRsvcgCXZPDntUrDEprk+bi+MMIrZ73fISY+v+h/BoQ3CJqPWYPBK76G3iVsXdZWn1L4Pne6Qlih7tUyKzA5WWvrLrhensDJKuTJIK616O0bfmzpn7/jlgd9/A1yhnpqG6/oI3U3gE9FEiXYGRxf3LI1fjGA2zY39I25nBqVl9SEdRziYTqeJnu1W98ryJSxI67cQbABfBbaq7Y+K7BJyp9AGZo3AdE5HJMfZXRud8QNZ1qHDYLHH7lxkjOOlS9Ya4bM/RFiVJOkJqcKnfOsou49syE2nwXKSDv22ZUy5+DKejFcXqCgv7NJytmbsYSYpiuR5O/XrqfjdsYTL7NPdIRLWqlZ+TA5SxS9AsEydkO8cab9RNxl+GZbL3vysdBBcmRMkufmAGWknm2tFR8e02voKp/VHvPIWMtGVpGNiAr7fF3puCPHZIXCyKz8BLsALn0b+l0rmo0t2jYSWMepclRtLrrjJcX8FAzqnqIFtnpTlQqQU47Q5bE8npmB1ZFafQLIMZdb7ilBy3+ab/yfyyywmL/8RxcfLV3nQ3HJwEC/ZslU1I=
