@@ -53,7 +53,7 @@ output:
 
 ## Showing task dependencies in a Cake script
 
-Add the following to your cake script:
+Add the following to your [cake](https://cakebuild.net/) script:
 
 ```c#
 #tool "nuget:?package=Tools.Graphgen&version=1.0.0"
@@ -63,11 +63,12 @@ Task("Dependencies")
     .Does(() =>
     {
 		Console.ForegroundColor = ConsoleColor.Blue;
-		Console.WriteLine("\n» Task dependencies\n");
+		Console.WriteLine("\n= Task dependencies\n");
 		Console.ForegroundColor = ConsoleColor.Gray;
 		var tasks = Tasks.Select(t => t.Name);
 		var dependencies = Tasks.SelectMany(t => t.Dependencies.Select(d => $"{t.Name} {d.Name}"));
+		var dependees = Tasks.SelectMany(t => t.Dependees.Select(d => $"{d.Name} {t.Name}"));
 		var graphgenExe = Context.Tools.Resolve(IsRunningOnWindows() ? "graphgen.exe" : "graphgen");
-		StartProcess(graphgenExe, string.Join(" . ", tasks.Concat(dependencies)));
+		StartProcess(graphgenExe, string.Join(" . ", tasks.Concat(dependencies).Concat(dependees)));
     });
 ```
