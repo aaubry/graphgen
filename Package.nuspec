@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Tools.Graphgen</id>
+    <version>1.0.0</version>
+    <authors>Antoine Aubry</authors>
+    <owners>Antoine Aubry</owners>
+    <licenseUrl>https://github.com/aaubry/graphgen/blob/master/LICENSE</licenseUrl>
+    <projectUrl> https://github.com/aaubry/graphgen</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>A tool to generate ascii graphs, based on Graph::Easy.</description>
+    <copyright>Copyright 2019</copyright>
+    <tags>Tools</tags>
+  </metadata>
+  
+  <files>
+    <file src="out\graphgen" target="content\graphgen" />
+    <file src="out\graphgen.exe" target="content\graphgen.exe" />
+  </files>
+</package>
